@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SH1MMER.me</title>
+  <link rel="stylesheet" href="/schoolwork/styles.css">
+  <script src="sh1mmer_files/script.js" defer="defer"></script>
+  <script is:inline="">
+    $(document).ready(function () {
+      $("#fogbutton").click(function () {
+        $("html, body").animate(
+          {
+            scrollTop: $("#fog").offset().top,
+          },
+          1000,
+        );
+      });
+    });
+  </script>
+  <script>
+    var messages = {
+      mercury:
+        "Check the credits button at the bottom of the page for more info.",
+      friday:
+        "A rather unlucky day for sysadmins, indeed. 🤡🤡🤡🤡",
+      pc: 
+        "Or if you can download the recovery utility extension on your school computer, but that's exceedingly rare.",
+      board:
+        "It's somewhere in the firmware log/debug info on the recovery screen. It is also shown at the bottom of the Android Preferences app. You can also go to a connected WiFi network in settings, click the Learn More link next to the message about syncing, and your board name will be somewhere in the URL of the newly-opened help tab.",
+      launch:
+        "Click the extensions icon in Chrome, then click Chromebook Recovery Utility.",
+    };
+  </script>
+  <!-- base href="https://sh1mmer.me/" -->
+<link href="data:text/css,%3Ais(%5Bid*%3D'google_ads_iframe'%5D%2C%5Bid*%3D'taboola-'%5D%2C.taboolaHeight%2C.taboola-placeholder%2C%23credential_picker_container%2C%23credentials-picker-container%2C%23credential_picker_iframe%2C%5Bid*%3D'google-one-tap-iframe'%5D%2C%23google-one-tap-popup-container%2C.google-one-tap-modal-div%2C%23amp_floatingAdDiv%2C%23ez-content-blocker-container%2C%23notify-adblock)%20%7Bdisplay%3Anone!important%3Bmin-height%3A0!important%3Bheight%3A0!important%3B%7D" rel="stylesheet" type="text/css"></head>
+
+<body>
+  <div class="header">
+    <h1>SH1MMER</h1>
+  <a href="/schoolwork/homepage.html"><b>Back To Home</b></a>
+    
+  </div>
+  <div class="section blue">
+    <h3>What is SH1MMER?</h3>
+    <p>
+      SH1MMER is an exploit capable of completely unenrolling
+      enterprise-managed Chromebooks. It was found by
+      the <a href="https://mercurywork.shop/">Mercury Workshop team</a> and
+      was released on January,
+      <u onclick="alert(messages.friday)">Friday the 13th</u>, 2023.
+
+      For more info, check out the <a href="https://coolelectronics.me/blog/breaking-cros-2">Writeup</a>
+    </p>
+    <h4>
+      If this isn't working for you, check
+      <button id="fogbutton" style="cursor: pointer">"The Fog"</button>
+      section below.
+    </h4>
+
+  </div>
+  <div class="section green">
+    <h3>What you will need</h3>
+    <li>A USB with at least 8 GBs of storage</li>
+    <li>
+      <u onclick="alert(messages.pc)">A personal computer or chromebook;</u> note that you
+      need admin perms on Windows/MacOS
+    </li>
+    <hr>
+    <h3>Writing to USB</h3>
+    <p>
+      First, you'll need to find your managed Chromebook's board name. This can
+      be done by going to <kbd>chrome://version</kbd> on your Chromebook and
+      copying the word after <kbd>stable-channel</kbd>, or with
+      <u onclick="alert(messages.board)">a variety of other methods</u>.
+    </p>
+    <p>
+      If your board name is in the list below, your board has a publicly leaked RMA shim. If it's not, you'll have to
+      source it
+      on your own... somehow.
+    </p>
+    brask, brya, clapper, coral, corsola, dedede, enguarde, glimmer, grunt, 
+    hana, hatch, jacuzzi, kukui, nami, octopus, orco, pyro, reks, sentry, 
+    stout, strongbad, tidus, ultima, volteer, zork
+    <p>
+      First you need to download a SH1MMER bin. Download a shim at <a href="https://dl.sh1mmer.me/">dl.sh1mmer.me</a><br> , and build it with the <a href="https://sh1mmer.me/builder" target="_self">SH1MMER web builder</a><br>
+      Once you've obtained a MODIFIED SHIM (NOT A RAW SHIM), you can continue.
+    </p>
+    <p>
+      Download the
+      <a href="https://chrome.google.com/webstore/detail/pocpnlppkickgojjlmhdmidojbmbodfm">
+        Chromebook Recovery Utility extension
+      </a>
+      <spc></spc>
+      on your personal computer as well.
+    </p>
+    <p>
+      Once the downloads are complete,
+      <u onclick="alert(messages.launch)">launch the recovery utility</u>
+      and plug your USB into your personal computer.
+    </p>
+    <i>Note: Your USB will be completely cleared and partitioned.</i>
+    <p>
+      In the recovery utility window, click the settings icon and press "Use
+      local image".
+    </p>
+    <p>
+      Select your shim file, identify your USB, and start the writing process.
+      This will take about 10 minutes.
+    </p>
+    <hr>
+    <h3>Executing on Chromebook</h3>
+    <p>
+      Once writing is complete, enter recovery mode on your Chromebook. This
+      is done by pressing the power button (⏻), reload key (↻), and ESC key at the
+      same time. Your screen should look one of the images below:
+    </p>
+
+    <p>Press <kbd>CTRL + D</kbd> on this screen, then press enter.</p>
+    <p>
+      It will now say something about "returning to secure mode" or that "OS
+      verification is off". You will most likely not actually be in dev mode,
+      but the exploit will work regardless. Your screen should look like one
+      of the images below:
+    </p>
+
+    <p>
+      On this screen, press the power button (⏻), reload key (↻), and ESC key at
+      the same time again! This is very important and cannot be skipped.
+    </p>
+    <p>
+      Once it re-shows the original recovery screen, plug your shimmed USB
+      into your Chromebook, and press the power button (⏻), reload key (↻), and
+      ESC key again. After a brief black-and-white loading screen, you should
+      be in the SH1MMER menu.
+    </p>
+
+    <p>Play around with the UI, exit, and reboot.</p>
+    <hr>
+    <div id="fog">
+    <h3> The Fog...</h3>
+    <h4>(Google's response, and why this might not be working for you)</h4>
+    <p>
+
+
+
+</body>
+</html>
